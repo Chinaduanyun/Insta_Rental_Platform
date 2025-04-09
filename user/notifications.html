@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一拍即租 - 消息通知</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .status-bar {
+            height: 44px;
+            background-color: #ffffff;
+        }
+        .app-container {
+            max-width: 390px;
+            height: 844px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .nav-bar {
+            height: 83px;
+            background-color: #ffffff;
+            border-top: 1px solid #f0f0f0;
+        }
+        .tab-active {
+            color: #EC4899;
+            border-bottom: 2px solid #EC4899;
+        }
+        .message-item {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .message-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container flex flex-col">
+        <!-- 状态栏 -->
+        <div class="status-bar flex items-center justify-between px-6">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="flex-1 overflow-auto">
+            <!-- 顶部标题 -->
+            <div class="sticky top-0 z-10 bg-white">
+                <div class="flex items-center px-5 py-4">
+                        <i class="fas fa-arrow-left text-gray-800 text-lg"></i>
+                    <div class="flex-1 text-center text-lg font-medium">消息通知</div>
+                </div>
+                
+                <!-- 消息类型选项卡 -->
+                <div class="flex border-b">
+                    <div class="flex-1 py-3 text-center text-sm font-medium tab-active">系统通知</div>
+                    <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">订单消息</div>
+                    <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">活动推送</div>
+                </div>
+            </div>
+            
+            <!-- 消息列表 -->
+            <div class="bg-white">
+                <!-- 消息项 1 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-bell text-pink-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">账号安全提醒</div>
+                            <div class="text-xs text-gray-500">今天 09:30</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            您的账号刚刚在新设备上登录，如非本人操作，请立即修改密码。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            查看详情 >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 消息项 2 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-gift text-blue-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">优惠券到账</div>
+                            <div class="text-xs text-gray-500">昨天 15:42</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            恭喜您获得一张价值¥20的租赁优惠券，有效期7天，请尽快使用。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            立即使用 >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 消息项 3 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">押金退还成功</div>
+                            <div class="text-xs text-gray-500">04-05 10:23</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            您的订单#20230405001押金¥299已退还到您的支付账户，请注意查收。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            查看订单 >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 消息项 4 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-bullhorn text-purple-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">系统升级通知</div>
+                            <div class="text-xs text-gray-500">04-01 08:00</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            为提供更好的服务体验，系统将于4月10日凌晨2:00-4:00进行升级维护，期间部分功能可能暂时无法使用。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            了解详情 >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 消息项 5 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">新品上架通知</div>
+                            <div class="text-xs text-gray-500">03-28 14:15</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            富士instax mini LiPlay新款拍立得相机已上架，支持蓝牙连接手机，打印照片更便捷。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            去看看 >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 消息项 6 -->
+                <div class="message-item px-5 py-4 flex">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-heart text-red-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="font-medium text-gray-800">会员福利</div>
+                            <div class="text-xs text-gray-500">03-20 11:30</div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-1">
+                            感谢您成为我们的注册会员，首次租赁可享受85折优惠，活动截止到4月底。
+                        </div>
+                        <div class="text-xs text-pink-500">
+                            立即参与 >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

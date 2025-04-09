@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一拍即租 - 营销管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .status-bar {
+            height: 44px;
+            background-color: #ffffff;
+        }
+        .app-container {
+            max-width: 390px;
+            height: 844px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .nav-bar {
+            height: 83px;
+            background-color: #ffffff;
+            border-top: 1px solid #f0f0f0;
+        }
+        .tab-active {
+            color: #EC4899;
+            border-bottom: 2px solid #EC4899;
+        }
+        .promotion-card {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container flex flex-col">
+        <!-- 状态栏 -->
+        <div class="status-bar flex items-center justify-between px-6">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="flex-1 overflow-auto">
+            <!-- 顶部标题 -->
+            <div class="sticky top-0 z-10 bg-white">
+                <div class="flex items-center justify-between px-5 py-4">
+                    <div class="text-lg font-medium">营销管理</div>
+                    <button class="px-3 py-1.5 bg-pink-500 rounded-full text-sm text-white">
+                        新建活动
+                    </button>
+                </div>
+                
+                <!-- 营销类型选项卡 -->
+                <div class="flex border-b">
+                    <div class="flex-1 py-3 text-center text-sm font-medium tab-active">全部活动</div>
+                    <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">进行中</div>
+                    <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">未开始</div>
+                    <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">已结束</div>
+                </div>
+            </div>
+            
+            <!-- 营销活动列表 -->
+            <div class="p-4">
+                <!-- 活动卡片 1 -->
+                <div class="bg-white rounded-xl mb-4 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-r from-pink-500 to-red-500 relative">
+                        <div class="absolute inset-0 p-4 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="text-white text-lg font-bold">春日特惠</div>
+                                    <div class="text-white text-sm mt-1 opacity-80">限时7折，租赁更划算</div>
+                                </div>
+                                <div class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-white text-xs">
+                                    进行中
+                                </div>
+                            </div>
+                            <div class="text-white text-xs opacity-80">
+                                2025.04.01 - 2025.04.15
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="text-sm text-gray-500">活动效果</div>
+                            <div class="text-xs text-pink-500">查看详情</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">2,156</div>
+                                <div class="text-xs text-gray-500">浏览量</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">328</div>
+                                <div class="text-xs text-gray-500">参与人数</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">¥4,580</div>
+                                <div class="text-xs text-gray-500">活动收入</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                编辑活动
+                            </button>
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                结束活动
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 2 -->
+                <div class="bg-white rounded-xl mb-4 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-r from-blue-500 to-purple-500 relative">
+                        <div class="absolute inset-0 p-4 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="text-white text-lg font-bold">新品体验</div>
+                                    <div class="text-white text-sm mt-1 opacity-80">新款相机首日半价</div>
+                                </div>
+                                <div class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-white text-xs">
+                                    未开始
+                                </div>
+                            </div>
+                            <div class="text-white text-xs opacity-80">
+                                2025.04.20 - 2025.04.21
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="text-sm text-gray-500">活动商品</div>
+                            <div class="text-xs text-pink-500">查看全部</div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                                <img src="https://images.unsplash.com/photo-1585508033035-e8b31bef7bd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-sm font-medium">富士 instax mini LiPlay 拍立得相机</div>
+                                <div class="flex items-center mt-1">
+                                    <div class="text-xs text-red-500 line-through mr-2">¥25/天</div>
+                                    <div class="text-xs text-red-500 font-medium">¥12.5/天</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                编辑活动
+                            </button>
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                取消活动
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 3 -->
+                <div class="bg-white rounded-xl mb-4 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-r from-green-500 to-teal-500 relative">
+                        <div class="absolute inset-0 p-4 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="text-white text-lg font-bold">元旦特惠</div>
+                                    <div class="text-white text-sm mt-1 opacity-80">满3天送相纸</div>
+                                </div>
+                                <div class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-white text-xs">
+                                    已结束
+                                </div>
+                            </div>
+                            <div class="text-white text-xs opacity-80">
+                                2024.12.30 - 2025.01.03
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="text-sm text-gray-500">活动效果</div>
+                            <div class="text-xs text-pink-500">查看详情</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">3,245</div>
+                                <div class="text-xs text-gray-500">浏览量</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">512</div>
+                                <div class="text-xs text-gray-500">参与人数</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">¥6,890</div>
+                                <div class="text-xs text-gray-500">活动收入</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                查看报告
+                            </button>
+                            <button class="flex-1 py-2 border border-pink-300 rounded-full text-sm text-pink-500">
+                                复制活动
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 4 -->
+                <div class="bg-white rounded-xl mb-4 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-r from-orange-500 to-yellow-500 relative">
+                        <div class="absolute inset-0 p-4 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="text-white text-lg font-bold">新用户专享</div>
+                                    <div class="text-white text-sm mt-1 opacity-80">首次租赁8.5折</div>
+                                </div>
+                                <div class="px-2 py-1 bg-white bg-opacity-20 rounded-full text-white text-xs">
+                                    进行中
+                                </div>
+                            </div>
+                            <div class="text-white text-xs opacity-80">
+                                2025.01.01 - 2025.12.31
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="text-sm text-gray-500">活动效果</div>
+                            <div class="text-xs text-pink-500">查看详情</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">1,862</div>
+                                <div class="text-xs text-gray-500">浏览量</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">245</div>
+                                <div class="text-xs text-gray-500">参与人数</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-base font-medium text-gray-800">¥3,120</div>
+                                <div class="text-xs text-gray-500">活动收入</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                编辑活动
+                            </button>
+                            <button class="flex-1 py-2 border border-gray-300 rounded-full text-sm text-gray-600">
+                                结束活动
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部导航栏 -->
+        <div class="nav-bar flex items-center justify-around px-2">
+            <div class="flex flex-col items-center">
+                <i class="fas fa-box text-gray-400 text-xl"></i>
+                <div class="text-xs text-gray-400 mt-1">商品</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-shopping-bag text-gray-400 text-xl"></i>
+                <div class="text-xs text-gray-400 mt-1">订单</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-chart-line text-gray-400 text-xl"></i>
+                <div class="text-xs text-gray-400 mt-1">数据</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-store text-pink-500 text-xl"></i>
+                <div class="text-xs text-pink-500 mt-1">店铺</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

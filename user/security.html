@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一拍即租 - 安全与隐私</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .status-bar {
+            height: 44px;
+            background-color: #ffffff;
+        }
+        .app-container {
+            max-width: 390px;
+            height: 844px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container flex flex-col">
+        <!-- 状态栏 -->
+        <div class="status-bar flex items-center justify-between px-6">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="flex-1 overflow-auto">
+            <!-- 顶部导航 -->
+            <div class="sticky top-0 z-10 bg-white">
+                <div class="flex items-center px-5 py-4">
+                    <i class="fas fa-arrow-left text-gray-800 text-lg"></i>
+                    <div class="flex-1 text-center text-lg font-medium">账号安全与隐私</div>
+                </div>
+            </div>
+            
+            <!-- 安全设置 -->
+            <div class="px-5 py-3">
+                <div class="text-sm text-gray-500 mb-2">账号安全</div>
+            </div>
+            
+            <div class="bg-white px-5 mb-3">
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">手机号码</div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">186****5678</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">登录密码</div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">已设置</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">支付密码</div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">未设置</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">两步验证</div>
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle" id="toggle-two-factor" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                        <label for="toggle-two-factor" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                    <style>
+                        .toggle-checkbox:checked {
+                            right: 0;
+                            border-color: #EC4899;
+                        }
+                        .toggle-checkbox:checked + .toggle-label {
+                            background-color: #EC4899;
+                        }
+                    </style>
+                </div>
+            </div>
+            
+            <!-- 账号绑定 -->
+            <div class="px-5 py-3">
+                <div class="text-sm text-gray-500 mb-2">账号绑定</div>
+            </div>
+            
+            <div class="bg-white px-5 mb-3">
+                <div class="menu-item flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-weixin text-green-600 text-xl mr-3"></i>
+                        <div class="text-gray-800">微信</div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">已绑定</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-qq text-blue-500 text-xl mr-3"></i>
+                        <div class="text-gray-800">QQ</div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">未绑定</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-weibo text-red-500 text-xl mr-3"></i>
+                        <div class="text-gray-800">微博</div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">未绑定</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 隐私设置 -->
+            <div class="px-5 py-3">
+                <div class="text-sm text-gray-500 mb-2">隐私设置</div>
+            </div>
+            
+            <div class="bg-white px-5 mb-3">
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">个人资料公开</div>
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle" id="toggle-profile" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
+                        <label for="toggle-profile" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">访客记录</div>
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle" id="toggle-visitors" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
+                        <label for="toggle-visitors" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">租赁历史公开</div>
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle" id="toggle-history" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                        <label for="toggle-history" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 其他安全设置 -->
+            <div class="bg-white px-5 mb-3">
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">登录设备管理</div>
+                    <i class="fas fa-chevron-right text-gray-300"></i>
+                </div>
+                
+                <div class="menu-item flex justify-between items-center">
+                    <div class="text-gray-800">清除缓存</div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">23.5MB</span>
+                        <i class="fas fa-chevron-right text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 账号注销 -->
+            <div class="px-5 py-4 mb-20">
+                <button class="w-full py-3 border border-red-300 rounded-full text-red-500 font-medium">
+                    <button class="w-full py-3 border border-red-300 rounded-full text-red-500 font-medium"> 注销账号 
+
+                    </button> 
+            </div> 
+            </div>
+         </div>
+         </body>
+    </html>
