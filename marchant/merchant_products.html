@@ -6,41 +6,7 @@
     <title>一拍即租 - 商品管理</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .status-bar {
-            height: 44px;
-            background-color: #ffffff;
-        }
-        .app-container {
-            max-width: 390px;
-            height: 844px;
-            margin: 0 auto;
-            background-color: #f5f5f5;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .nav-bar {
-            height: 83px;
-            background-color: #ffffff;
-            border-top: 1px solid #f0f0f0;
-        }
-        .tab-active {
-            color: #EC4899;
-            border-bottom: 2px solid #EC4899;
-        }
-        .product-item {
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .product-item:last-child {
-            border-bottom: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <div class="app-container flex flex-col">
@@ -114,7 +80,7 @@
                 <!-- 商品项 2 -->
                 <div class="product-item p-4 flex">
                     <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3 flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1576574535966-261f8a62e2d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
                         <div class="flex justify-between items-start mb-1">
@@ -141,7 +107,7 @@
                 <!-- 商品项 3 -->
                 <div class="product-item p-4 flex">
                     <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3 flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1585508033035-e8b31bef7bd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
                         <div class="flex justify-between items-start mb-1">
@@ -168,7 +134,7 @@
                 <!-- 商品项 4 -->
                 <div class="product-item p-4 flex">
                     <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3 flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1595511890410-3f7bd8e8bf89?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
                         <div class="flex justify-between items-start mb-1">
@@ -201,18 +167,26 @@
                 <div class="text-xs text-pink-500 mt-1">商品</div>
             </div>
             <div class="flex flex-col items-center">
-                <i class="fas fa-shopping-bag text-gray-400 text-xl"></i>
-                <div class="text-xs text-gray-400 mt-1">订单</div>
+                <a href="merchant_orders.html" class="flex flex-col items-center">
+                    <i class="fas fa-shopping-bag text-gray-400 text-xl"></i>
+                    <div class="text-xs text-gray-400 mt-1">订单</div>
+                </a>
             </div>
             <div class="flex flex-col items-center">
-                <i class="fas fa-chart-line text-gray-400 text-xl"></i>
-                <div class="text-xs text-gray-400 mt-1">数据</div>
+                <a href="merchant_statistics.html" class="flex flex-col items-center">
+                    <i class="fas fa-chart-line text-gray-400 text-xl"></i>
+                    <div class="text-xs text-gray-400 mt-1">数据</div>
+                </a>
             </div>
             <div class="flex flex-col items-center">
-                <i class="fas fa-store text-gray-400 text-xl"></i>
-                <div class="text-xs text-gray-400 mt-1">店铺</div>
+                <a href="merchant_marketing.html" class="flex flex-col items-center">
+                    <i class="fas fa-store text-gray-400 text-xl"></i>
+                    <div class="text-xs text-gray-400 mt-1">店铺</div>
+                </a>
             </div>
         </div>
     </div>
+    
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

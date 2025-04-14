@@ -6,33 +6,7 @@
     <title>一拍即租 - 注册</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .status-bar {
-            height: 44px;
-            background-color: #ffffff;
-        }
-        .app-container {
-            max-width: 390px;
-            height: 844px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .input-field {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 12px 0;
-        }
-        .input-field:focus-within {
-            border-color: #EC4899;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="app-container flex flex-col">
@@ -50,7 +24,7 @@
         <div class="flex-1 overflow-auto px-8 py-6">
             <!-- 返回按钮 -->
             <div class="mb-8">
-                <i class="fas fa-arrow-left text-gray-800 text-lg"></i>
+                <i class="fas fa-arrow-left text-gray-800 text-lg back-btn"></i>
             </div>
             
             <!-- 注册标题 -->
@@ -60,26 +34,26 @@
             </div>
             
             <!-- 注册表单 -->
-            <div class="mb-8">
+            <form id="registerForm" class="mb-8">
                 <div class="input-field mb-6">
                     <label class="block text-sm text-gray-500 mb-2">手机号码</label>
                     <div class="flex items-center">
-                        <input type="tel" placeholder="请输入手机号码" class="w-full focus:outline-none text-gray-800">
+                        <input type="tel" placeholder="请输入手机号码" class="w-full focus:outline-none text-gray-800" required>
                     </div>
                 </div>
                 
                 <div class="input-field mb-6">
                     <label class="block text-sm text-gray-500 mb-2">验证码</label>
                     <div class="flex items-center">
-                        <input type="text" placeholder="请输入验证码" class="w-full focus:outline-none text-gray-800">
-                        <button class="text-sm text-pink-500 whitespace-nowrap">获取验证码</button>
+                        <input type="text" placeholder="请输入验证码" class="w-full focus:outline-none text-gray-800" required>
+                        <button type="button" class="text-sm text-pink-500 whitespace-nowrap">获取验证码</button>
                     </div>
                 </div>
                 
                 <div class="input-field mb-6">
                     <label class="block text-sm text-gray-500 mb-2">设置密码</label>
                     <div class="flex items-center">
-                        <input type="password" placeholder="请设置6-20位密码" class="w-full focus:outline-none text-gray-800">
+                        <input type="password" placeholder="请设置6-20位密码" class="w-full focus:outline-none text-gray-800" required>
                         <i class="far fa-eye text-gray-400"></i>
                     </div>
                 </div>
@@ -87,27 +61,49 @@
                 <div class="input-field mb-8">
                     <label class="block text-sm text-gray-500 mb-2">确认密码</label>
                     <div class="flex items-center">
-                        <input type="password" placeholder="请再次输入密码" class="w-full focus:outline-none text-gray-800">
+                        <input type="password" placeholder="请再次输入密码" class="w-full focus:outline-none text-gray-800" required>
                         <i class="far fa-eye text-gray-400"></i>
                     </div>
                 </div>
                 
                 <div class="flex items-start mb-8">
-                    <input type="checkbox" id="agree" class="w-4 h-4 mt-0.5 text-pink-500 rounded">
+                    <input type="checkbox" id="agree" class="w-4 h-4 mt-0.5 text-pink-500 rounded" required>
                     <label for="agree" class="text-sm text-gray-600 ml-2">
                         我已阅读并同意<span class="text-pink-500">《用户协议》</span>和<span class="text-pink-500">《隐私政策》</span>
                     </label>
                 </div>
                 
-                <button onclick="window.location.href='./user/home.html'" class="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-3.5 rounded-full font-medium mb-4">
+                <button type="button" onclick="window.location.href='./user/home.html'" class="primary-btn mb-4">
                     注册
                 </button>
                 
                 <div class="text-center">
                     <a href="login.html" class="text-sm text-gray-600">已有账号？<span class="text-pink-500">立即登录</span></a>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // 注册表单提交处理
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = this.querySelector('input[type="tel"]').value;
+            const password = this.querySelector('input[type="password"]').value;
+            const confirmPassword = this.querySelectorAll('input[type="password"]')[1].value;
+            
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致');
+                return;
+            }
+            
+            if (auth.register(username, password)) {
+                window.location.href = './user/home.html';
+            } else {
+                alert('注册失败，请检查输入信息');
+            }
+        });
+    </script>
 </body>
 </html>

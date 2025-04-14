@@ -14,6 +14,7 @@
         .status-bar {
             height: 44px;
             background-color: #ffffff;
+            padding: 0 16px;
         }
         .app-container {
             max-width: 390px;
@@ -31,11 +32,23 @@
             border-top: 1px solid #f0f0f0;
         }
         .menu-item {
-            padding: 16px 0;
+            padding: 14px 0;
             border-bottom: 1px solid #f0f0f0;
         }
         .menu-item:last-child {
             border-bottom: none;
+        }
+        .menu-card {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .action-button {
+            min-width: 80px;
+            padding: 8px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -68,7 +81,7 @@
                         <div class="text-white/80 text-sm">ID: 10086753</div>
                     </div>
                     <div class="ml-auto">
-                        <button class="bg-white/20 text-white text-sm px-3 py-1 rounded-full">
+                        <button class="action-button bg-white/20 text-white">
                             编辑资料
                         </button>
                     </div>
@@ -76,7 +89,7 @@
             </div>
             
             <!-- 用户数据统计 -->
-            <div class="bg-white rounded-t-3xl -mt-6 px-5 py-6 mb-3">
+            <div class="bg-white rounded-t-3xl -mt-6 px-5 py-6 mb-3 menu-card">
                 <div class="flex justify-between">
                     <div class="text-center">
                         <div class="text-xl font-bold text-gray-800">12</div>
@@ -94,7 +107,7 @@
             </div>
             
             <!-- 订单管理 -->
-            <div class="bg-white px-5 py-4 mb-3">
+            <div class="bg-white px-5 py-4 mb-3 menu-card">
                 <div class="flex justify-between items-center mb-4">
                     <div class="text-base font-medium">我的订单</div>
                     <div class="text-sm text-gray-500 flex items-center">
@@ -132,7 +145,7 @@
             </div>
             
             <!-- 功能菜单 -->
-            <div class="bg-white px-5 mb-3">
+            <div class="bg-white px-5 mb-3 menu-card">
                 <div class="menu-item flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mr-3">
@@ -168,7 +181,7 @@
             </div>
             
             <!-- 账号安全 -->
-            <div class="bg-white px-5 mb-3">
+            <div class="bg-white px-5 mb-3 menu-card">
                 <div class="menu-item flex justify-between items-center">
                     <div class="flex items-center">
                         <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3">
@@ -202,7 +215,7 @@
             
             <!-- 退出登录 -->
             <div class="px-5 py-4 mb-20">
-                <button class="w-full py-3 border border-gray-300 rounded-full text-gray-600 font-medium">
+                <button class="w-full action-button border border-gray-300 text-gray-600">
                     退出登录
                 </button>
             </div>

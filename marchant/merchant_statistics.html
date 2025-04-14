@@ -106,29 +106,51 @@
                 <!-- 收入趋势图 -->
                 <div class="bg-white rounded-xl p-4 mb-4">
                     <div class="flex justify-between items-center mb-4">
-                        <div class="text-sm text-gray-500">收入趋势</div>
+                        <div class="text-sm text-gray-500">收入趋势 (最近7天)</div>
                         <div class="text-xs text-gray-400">单位: 元</div>
                     </div>
-                    <div class="h-40 bg-gradient-to-b from-pink-50 to-white relative rounded-lg overflow-hidden">
+                    <div class="h-48 bg-white border border-gray-100 relative rounded-lg overflow-hidden">
+                        <!-- Y轴刻度 -->
+                        <div class="absolute left-2 top-0 h-full flex flex-col justify-between py-2">
+                            <div class="text-xs text-gray-400">1000</div>
+                            <div class="text-xs text-gray-400">750</div>
+                            <div class="text-xs text-gray-400">500</div>
+                            <div class="text-xs text-gray-400">250</div>
+                            <div class="text-xs text-gray-400">0</div>
+                        </div>
                         <!-- 模拟图表 -->
-                        <div class="absolute bottom-0 left-0 w-full h-full flex items-end px-2">
-                            <div class="w-1/7 h-20 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-24 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-16 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-28 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-32 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-22 bg-pink-400 rounded-t mx-1 opacity-60"></div>
-                            <div class="w-1/7 h-36 bg-pink-400 rounded-t mx-1 opacity-60"></div>
+                        <div class="absolute bottom-0 left-8 right-2 h-[calc(100%-20px)] flex items-end px-1">
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:20%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:24%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:16%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:28%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:32%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:22%"></div>
+                            </div>
+                            <div class="flex-1 h-full flex items-end">
+                                <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t mx-0.5" style="height:36%"></div>
+                            </div>
                         </div>
                         <!-- 图表标签 -->
-                        <div class="absolute bottom-0 left-0 w-full flex justify-between px-2 pb-1">
-                            <div class="text-xs text-gray-500">4.3</div>
-                            <div class="text-xs text-gray-500">4.4</div>
-                            <div class="text-xs text-gray-500">4.5</div>
-                            <div class="text-xs text-gray-500">4.6</div>
-                            <div class="text-xs text-gray-500">4.7</div>
-                            <div class="text-xs text-gray-500">4.8</div>
-                            <div class="text-xs text-gray-500">4.9</div>
+                        <div class="absolute bottom-0 left-8 right-2 flex justify-between px-1 pb-1">
+                            <div class="text-xs text-gray-500 text-center w-full">周一</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周二</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周三</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周四</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周五</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周六</div>
+                            <div class="text-xs text-gray-500 text-center w-full">周日</div>
                         </div>
                     </div>
                 </div>

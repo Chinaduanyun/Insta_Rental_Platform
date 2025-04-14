@@ -1,0 +1,287 @@
+/* 
+ * 一拍即租平台通用样式优化版
+ * 包含所有页面共享的样式定义，优化了性能和响应式设计
+ */
+
+/* 基础样式 */
+body {
+    font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 应用容器 */
+.app-container {
+    max-width: 390px;
+    height: 844px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* 响应式设计 - 小屏幕适配 */
+@media (max-width: 400px) {
+    .app-container {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+/* 状态栏 */
+.status-bar {
+    height: 44px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* 导航栏 */
+.nav-bar {
+    height: 83px;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+}
+
+/* 输入框样式 */
+.input-field {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 0;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus-within {
+    border-color: #EC4899;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/* 卡片样式 */
+.polaroid-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.polaroid-card:hover, .polaroid-card:active {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.polaroid-card:hover img {
+    transform: scale(1.05);
+}
+
+/* 选项卡样式 */
+.tab-active {
+    color: #EC4899;
+    border-bottom: 2px solid #EC4899;
+    transition: all 0.2s ease;
+}
+
+.tab-container {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tab-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+    color: #EC4899;
+}
+
+/* 商品项样式 */
+.product-item {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* 社交登录按钮 */
+.social-login-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 按钮样式 */
+.primary-btn {
+    background-image: linear-gradient(to right, #EC4899, #EF4444);
+    color: white;
+    border-radius: 9999px;
+    padding: 0.875rem 0;
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.primary-btn:hover, .primary-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+/* 返回按钮 */
+.back-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-3px);
+}
+
+/* 加载优化 */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* 骨架屏 */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 触摸反馈 */
+.touch-feedback {
+    position: relative;
+    overflow: hidden;
+}
+
+.touch-feedback::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.touch-feedback:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+/* 滚动优化 */
+.smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .app-container {
+        background-color: #1f2937;
+        color: #f3f4f6;
+    }
+    
+    .status-bar, .nav-bar {
+        background-color: #1f2937;
+    }
+    
+    .input-field {
+        border-color: #374151;
+    }
+    
+    .input-field input {
+        color: #f3f4f6;
+    }
+    
+    .polaroid-card {
+        background-color: #2d3748;
+    }
+    
+    .product-item:hover {
+        background-color: #2d3748;
+    }
+    
+    .skeleton {
+        background: linear-gradient(90deg, #2d3748 25%, #374151 50%, #2d3748 75%);
+    }
+}

@@ -14,6 +14,7 @@
         .status-bar {
             height: 44px;
             background-color: #ffffff;
+            padding: 0 16px;
         }
         .app-container {
             max-width: 390px;
@@ -33,6 +34,31 @@
         .tab-active {
             color: #EC4899;
             border-bottom: 2px solid #EC4899;
+        }
+        .order-card {
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .order-status {
+            font-weight: 500;
+        }
+        .order-status.pending {
+            color: #F59E0B;
+        }
+        .order-status.completed {
+            color: #10B981;
+        }
+        .order-status.shipping {
+            color: #3B82F6;
+        }
+        .order-status.waiting-payment {
+            color: #9CA3AF;
+        }
+        .action-button {
+            min-width: 80px;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -68,13 +94,13 @@
             <!-- 订单列表 -->
             <div class="p-3">
                 <!-- 订单项 1 -->
-                <div class="bg-white rounded-xl mb-3 overflow-hidden">
+                <div class="bg-white rounded-xl overflow-hidden order-card">
                     <div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
                         <div class="flex items-center">
                             <i class="fas fa-store text-gray-400 mr-2"></i>
                             <span class="text-sm">一拍即租官方店</span>
                         </div>
-                        <div class="text-sm text-pink-500">待发货</div>
+                        <div class="text-sm order-status shipping">待发货</div>
                     </div>
                     
                     <div class="p-4 flex border-b border-gray-100">
@@ -98,10 +124,10 @@
                             共1件商品 实付: <span class="text-gray-800 font-medium">¥45.00</span>
                         </div>
                         <div class="flex space-x-2">
-                            <button class="px-3 py-1.5 border border-gray-300 rounded-full text-sm text-gray-600">
+                            <button class="action-button border border-gray-300 text-gray-600">
                                 联系客服
                             </button>
-                            <button class="px-3 py-1.5 bg-pink-500 rounded-full text-sm text-white">
+                            <button class="action-button bg-pink-500 text-white ml-2">
                                 查看物流
                             </button>
                         </div>
@@ -115,108 +141,121 @@
                             <i class="fas fa-store text-gray-400 mr-2"></i>
                             <span class="text-sm">一拍即租官方店</span>
                         </div>
-                        <div class="text-sm text-green-500">已完成</div>
+                        <div class="text-sm order-status completed">已完成</div>
                     </div>
                     
                     <div class="p-4 flex border-b border-gray-100">
                         <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3">
-                            <img src="https://images.unsplash.
-                            <div class="px-4 py-3 flex justify-between items-center">
-                                <div class="text-sm text-gray-500">
-                                    共1件商品 实付: <span class="text-gray-800 font-medium">¥60.00</span>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="px-3 py-1.5 border border-gray-300 rounded-full text-sm text-gray-600">
-                                        删除订单
-                                    </button>
-                                    <button class="px-3 py-1.5 border border-gray-300 rounded-full text-sm text-gray-600">
-                                        再次租赁
-                                    </button>
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-sm font-medium mb-1 line-clamp-2">富士 instax mini 9 拍立得相机 冰晶白</div>
+                            <div class="text-xs text-gray-500 mb-2">租赁时间: 4月8日 - 4月10日 (2天)</div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500">押金: ¥299</div>
+                                <div class="text-sm text-gray-800">
+                                    <span class="text-xs">¥</span>30 × 2天
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="px-4 py-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            共1件商品 实付: <span class="text-gray-800 font-medium">¥60.00</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="action-button border border-gray-300 text-gray-600">
+                                删除订单
+                            </button>
+                            <button class="action-button border border-gray-300 text-gray-600 ml-2">
+                                再次租赁
+                            </button>
+                        </div>
+                    </div>
+                </div>
                         
-                        <!-- 订单项 3 -->
-                        <div class="bg-white rounded-xl mb-3 overflow-hidden">
-                            <div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
-                                <div class="flex items-center">
-                                    <i class="fas fa-store text-gray-400 mr-2"></i>
-                                    <span class="text-sm">一拍即租官方店</span>
-                                </div>
-                                <div class="text-sm text-orange-500">待归还</div>
-                            </div>
-                            
-                            <div class="p-4 flex border-b border-gray-100">
-                                <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3">
-                                    <img src="https://images.unsplash.com/photo-1585508033035-e8b31bef7bd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1">
-                                    <div class="text-sm font-medium mb-1 line-clamp-2">富士 instax mini LiPlay 拍立得相机 雾白</div>
-                                    <div class="text-xs text-gray-500 mb-2">租赁时间: 4月5日 - 4月10日 (5天)</div>
-                                    <div class="flex justify-between">
-                                        <div class="text-xs text-gray-500">押金: ¥499</div>
-                                        <div class="text-sm text-gray-800">
-                                            <span class="text-xs">¥</span>25 × 5天
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="px-4 py-3 flex justify-between items-center">
-                                <div class="text-sm text-gray-500">
-                                    共1件商品 实付: <span class="text-gray-800 font-medium">¥125.00</span>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="px-3 py-1.5 border border-gray-300 rounded-full text-sm text-gray-600">
-                                        联系客服
-                                    </button>
-                                    <button class="px-3 py-1.5 bg-pink-500 rounded-full text-sm text-white">
-                                        申请归还
-                                    </button>
+                <!-- 订单项 3 -->
+                <div class="bg-white rounded-xl mb-3 overflow-hidden">
+                    <div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-store text-gray-400 mr-2"></i>
+                            <span class="text-sm">一拍即租官方店</span>
+                        </div>
+                        <div class="text-sm order-status pending">待归还</div>
+                    </div>
+                    
+                    <div class="p-4 flex border-b border-gray-100">
+                        <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-sm font-medium mb-1 line-clamp-2">富士 instax mini LiPlay 拍立得相机 雾白</div>
+                            <div class="text-xs text-gray-500 mb-2">租赁时间: 4月5日 - 4月10日 (5天)</div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500">押金: ¥499</div>
+                                <div class="text-sm text-gray-800">
+                                    <span class="text-xs">¥</span>25 × 5天
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- 订单项 4 -->
-                        <div class="bg-white rounded-xl mb-3 overflow-hidden">
-                            <div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
-                                <div class="flex items-center">
-                                    <i class="fas fa-store text-gray-400 mr-2"></i>
-                                    <span class="text-sm">一拍即租官方店</span>
-                                </div>
-                                <div class="text-sm text-gray-500">待付款</div>
-                            </div>
-                            
-                            <div class="p-4 flex border-b border-gray-100">
-                                <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3">
-                                    <img src="https://images.unsplash.com/photo-1595511890410-3f7bd8e8bf89?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1">
-                                    <div class="text-sm font-medium mb-1 line-clamp-2">富士 instax SQUARE SQ1 拍立得相机 蓝色</div>
-                                    <div class="text-xs text-gray-500 mb-2">租赁时间: 4月15日 - 4月18日 (3天)</div>
-                                    <div class="flex justify-between">
-                                        <div class="text-xs text-gray-500">押金: ¥399</div>
-                                        <div class="text-sm text-gray-800">
-                                            <span class="text-xs">¥</span>22 × 3天
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="px-4 py-3 flex justify-between items-center">
-                                <div class="text-sm text-gray-500">
-                                    共1件商品 应付: <span class="text-gray-800 font-medium">¥66.00</span>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="px-3 py-1.5 border border-gray-300 rounded-full text-sm text-gray-600">
-                                        取消订单
-                                    </button>
-                                    <button class="px-3 py-1.5 bg-pink-500 rounded-full text-sm text-white">
-                                        立即付款
-                                    </button>
+                    </div>
+                    
+                    <div class="px-4 py-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            共1件商品 实付: <span class="text-gray-800 font-medium">¥125.00</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="action-button border border-gray-300 text-gray-600">
+                                联系客服
+                            </button>
+                            <button class="action-button bg-pink-500 text-white ml-2">
+                                申请归还
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 订单项 4 -->
+                <div class="bg-white rounded-xl mb-3 overflow-hidden">
+                    <div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-store text-gray-400 mr-2"></i>
+                            <span class="text-sm">一拍即租官方店</span>
+                        </div>
+                        <div class="text-sm order-status waiting-payment">待付款</div>
+                    </div>
+                    
+                    <div class="p-4 flex border-b border-gray-100">
+                        <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1595511890410-3f7bd8e8bf89?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-sm font-medium mb-1 line-clamp-2">富士 instax SQUARE SQ1 拍立得相机 蓝色</div>
+                            <div class="text-xs text-gray-500 mb-2">租赁时间: 4月15日 - 4月18日 (3天)</div>
+                            <div class="flex justify-between">
+                                <div class="text-xs text-gray-500">押金: ¥399</div>
+                                <div class="text-sm text-gray-800">
+                                    <span class="text-xs">¥</span>22 × 3天
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="px-4 py-3 flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            共1件商品 应付: <span class="text-gray-800 font-medium">¥66.00</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="action-button border border-gray-300 text-gray-600">
+                                取消订单
+                            </button>
+                            <button class="action-button bg-pink-500 text-white ml-2">
+                                立即付款
+                            </button>
+                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
                 

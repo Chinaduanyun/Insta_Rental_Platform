@@ -6,33 +6,7 @@
     <title>一拍即租 - 商家登录</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .status-bar {
-            height: 44px;
-            background-color: #ffffff;
-        }
-        .app-container {
-            max-width: 390px;
-            height: 844px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .input-field {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 12px 0;
-        }
-        .input-field:focus-within {
-            border-color: #EC4899;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <div class="app-container flex flex-col">
@@ -50,7 +24,7 @@
         <div class="flex-1 overflow-auto px-8 py-6">
             <!-- 返回按钮 -->
             <div class="mb-8">
-                <i class="fas fa-arrow-left text-gray-800 text-lg"></i>
+                <i class="fas fa-arrow-left text-gray-800 text-lg back-btn"></i>
             </div>
             
             <!-- 登录标题 -->
@@ -60,18 +34,18 @@
             </div>
             
             <!-- 登录表单 -->
-            <div class="mb-8">
+            <form id="merchantLoginForm" class="mb-8">
                 <div class="input-field mb-6">
                     <label class="block text-sm text-gray-500 mb-2">商家账号</label>
                     <div class="flex items-center">
-                        <input type="text" placeholder="请输入商家账号" class="w-full focus:outline-none text-gray-800">
+                        <input type="text" placeholder="请输入商家账号" class="w-full focus:outline-none text-gray-800" required>
                     </div>
                 </div>
                 
                 <div class="input-field mb-6">
                     <label class="block text-sm text-gray-500 mb-2">密码</label>
                     <div class="flex items-center">
-                        <input type="password" placeholder="请输入密码" class="w-full focus:outline-none text-gray-800">
+                        <input type="password" placeholder="请输入密码" class="w-full focus:outline-none text-gray-800" required>
                         <i class="far fa-eye text-gray-400"></i>
                     </div>
                 </div>
@@ -84,15 +58,34 @@
                     <a href="#" class="text-sm text-pink-500">忘记密码？</a>
                 </div>
                 
-                <button onclick="window.location.href='merchant_products.html'" class="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-3.5 rounded-full font-medium mb-4">
+                <button type="button" onclick="window.location.href='merchant_products.html'" class="primary-btn mb-4">
                     登录
                 </button>
                 
                 <div class="text-center">
                     <a href="#" class="text-sm text-gray-600">还没有商家账号？<span class="text-pink-500">立即申请</span></a>
                 </div>
-            </div>
+                <div class="text-center mt-2">
+                    <a href="../login.html" class="text-sm text-gray-600">返回用户登录</a>
+                </div>
+            </form>
         </div>
     </div>
+    
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // 商家登录表单提交处理
+        document.getElementById('merchantLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = this.querySelector('input[type="text"]').value;
+            const password = this.querySelector('input[type="password"]').value;
+            
+            if (username && password) {
+                window.location.href = 'merchant_products.html';
+            } else {
+                alert('请输入账号和密码');
+            }
+        });
+    </script>
 </body>
 </html>

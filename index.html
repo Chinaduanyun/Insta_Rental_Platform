@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一拍即租 - 欢迎</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding: 2rem;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #EC4899, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .welcome-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 300px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container flex flex-col">
+        <!-- 状态栏 1-->
+        <div class="status-bar flex items-center justify-between px-6">
+            <div class="text-sm font-medium">9:41</div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="flex-1 overflow-auto">
+            <div class="welcome-container">
+                <div class="logo">一拍即租</div>
+                <p class="text-gray-600 mb-4">高品质拍立得相机租赁平台</p>
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w-64 h-64 object-cover rounded-lg mb-8 shadow-lg">
+                <div class="welcome-buttons">
+                    <a href="login.html" class="primary-btn">用户登录</a>
+                    <a href="register.html" class="bg-white border border-pink-500 text-pink-500 py-3.5 rounded-full font-medium w-full text-center">注册账号</a>
+                    <a href="marchant/merchant_login.html" class="text-gray-600 mt-2">商家入口</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // 检查是否已登录，如果已登录则直接跳转到首页
+        document.addEventListener('DOMContentLoaded', function() {
+            if (auth.isLoggedIn()) {
+                window.location.href = 'user/home.html';
+            }
+        });
+    </script>
+</body>
+</html>
