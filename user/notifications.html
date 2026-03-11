@@ -1,61 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一拍即租 - 消息通知</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .status-bar {
-            height: 44px;
-            background-color: #ffffff;
-        }
-        .app-container {
-            max-width: 390px;
-            height: 844px;
-            margin: 0 auto;
-            background-color: #f5f5f5;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .nav-bar {
-            height: 83px;
-            background-color: #ffffff;
-            border-top: 1px solid #f0f0f0;
-        }
-        .tab-active {
-            color: #EC4899;
-            border-bottom: 2px solid #EC4899;
-        }
-        .message-item {
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .message-item:last-child {
-            border-bottom: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <div class="app-container flex flex-col">
         <!-- 状态栏 -->
-        <div class="status-bar flex items-center justify-between px-6">
+        <header class="status-bar flex items-center justify-between px-6">
             <div class="text-sm font-medium">9:41</div>
             <div class="flex items-center space-x-2">
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-wifi"></i>
                 <i class="fas fa-battery-full"></i>
             </div>
-        </div>
-        
+        </header>
+
         <!-- 主内容区 -->
-        <div class="flex-1 overflow-auto">
+        <main class="flex-1 overflow-auto">
             <!-- 顶部导航 -->
             <div class="sticky top-0 z-10 bg-white">
                 <div class="flex items-center px-5 py-4">
@@ -63,8 +31,7 @@
                     <div class="flex-1 text-center text-lg font-medium">消息通知</div>
                     <i class="fas fa-share-alt text-gray-800 text-lg"></i>
                 </div>
-            </div>
-                
+
                 <!-- 消息类型选项卡 -->
                 <div class="flex border-b">
                     <div class="flex-1 py-3 text-center text-sm font-medium tab-active">系统通知</div>
@@ -72,7 +39,7 @@
                     <div class="flex-1 py-3 text-center text-sm font-medium text-gray-500">活动推送</div>
                 </div>
             </div>
-            
+
             <!-- 消息列表 -->
             <div class="bg-white">
                 <!-- 消息项 1 -->
@@ -93,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 消息项 2 -->
                 <div class="message-item px-5 py-4 flex">
                     <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
@@ -112,10 +79,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 消息项 3 -->
                 <div class="message-item px-5 py-4 flex">
-                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div
+                        class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
                         <i class="fas fa-check-circle text-green-500"></i>
                     </div>
                     <div class="flex-1">
@@ -131,10 +99,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 消息项 4 -->
                 <div class="message-item px-5 py-4 flex">
-                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3 flex-shrink-0">
                         <i class="fas fa-bullhorn text-purple-500"></i>
                     </div>
                     <div class="flex-1">
@@ -150,10 +119,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 消息项 5 -->
                 <div class="message-item px-5 py-4 flex">
-                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div
+                        class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-3 flex-shrink-0">
                         <i class="fas fa-star text-yellow-500"></i>
                     </div>
                     <div class="flex-1">
@@ -169,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 消息项 6 -->
                 <div class="message-item px-5 py-4 flex">
                     <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0">
@@ -189,7 +159,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+
+    <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

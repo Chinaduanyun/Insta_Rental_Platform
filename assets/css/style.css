@@ -3,6 +3,27 @@
  * 包含所有页面共享的样式定义，优化了性能和响应式设计
  */
 
+/* 轮播图样式 */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.5s ease;
+}
+
+.carousel-dot {
+    transition: background-color 0.3s ease;
+}
+
+/* 搜索无结果提示 */
+.search-no-result i {
+    display: block;
+}
+
 /* 基础样式 */
 body {
     font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
@@ -22,7 +43,7 @@ body {
     border-radius: 40px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -82,15 +103,16 @@ body {
 /* 卡片样式 */
 .polaroid-card {
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     background-color: #ffffff;
     overflow: hidden;
 }
 
-.polaroid-card:hover, .polaroid-card:active {
+.polaroid-card:hover,
+.polaroid-card:active {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .polaroid-card img {
@@ -155,7 +177,7 @@ body {
 
 .social-login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 按钮样式 */
@@ -172,7 +194,8 @@ body {
     text-align: center;
 }
 
-.primary-btn:hover, .primary-btn:active {
+.primary-btn:hover,
+.primary-btn:active {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
 }
@@ -199,8 +222,13 @@ body {
 
 /* 动画效果 */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .fade-in {
@@ -215,8 +243,13 @@ body {
 }
 
 @keyframes skeleton-loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 /* 触摸反馈 */
@@ -260,28 +293,144 @@ body {
         background-color: #1f2937;
         color: #f3f4f6;
     }
-    
-    .status-bar, .nav-bar {
+
+    .status-bar,
+    .nav-bar {
         background-color: #1f2937;
     }
-    
+
     .input-field {
         border-color: #374151;
     }
-    
+
     .input-field input {
         color: #f3f4f6;
     }
-    
+
     .polaroid-card {
         background-color: #2d3748;
     }
-    
+
     .product-item:hover {
         background-color: #2d3748;
     }
-    
+
     .skeleton {
         background: linear-gradient(90deg, #2d3748 25%, #374151 50%, #2d3748 75%);
     }
+}
+
+/* ========== 页面专用样式（统一收录） ========== */
+
+/* 订单卡片 */
+.order-card {
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 订单状态 */
+.order-status {
+    font-weight: 500;
+}
+
+.order-status.pending {
+    color: #F59E0B;
+}
+
+.order-status.completed {
+    color: #10B981;
+}
+
+.order-status.shipping {
+    color: #3B82F6;
+}
+
+.order-status.waiting-payment {
+    color: #9CA3AF;
+}
+
+/* 操作按钮 */
+.action-button {
+    min-width: 80px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 菜单项 */
+.menu-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+/* 菜单卡片 */
+.menu-card {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 分类卡片 */
+.category-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+/* 分类图标 */
+.category-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+/* 消息项 */
+.message-item {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+/* 订单项（商家端） */
+.order-item {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+/* 统计卡片 */
+.stat-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 营销活动卡片 */
+.promotion-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 开关按钮 */
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: #EC4899;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+    background-color: #EC4899;
 }

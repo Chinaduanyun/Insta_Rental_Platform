@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <div class="app-container flex flex-col">
         <!-- 状态栏 -->
-        <div class="status-bar flex items-center justify-between px-6">
+        <header class="status-bar flex items-center justify-between px-6">
             <div class="text-sm font-medium">9:41</div>
             <div class="flex items-center space-x-2">
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-wifi"></i>
                 <i class="fas fa-battery-full"></i>
             </div>
-        </div>
-        
+        </header>
+
         <!-- 主内容区 -->
-        <div class="flex-1 overflow-auto">
+        <main class="flex-1 overflow-auto">
             <!-- 顶部导航 -->
             <div class="sticky top-0 z-10 bg-white">
                 <div class="flex items-center px-5 py-4">
@@ -30,17 +32,17 @@
                     <i class="fas fa-share-alt text-gray-800 text-lg"></i>
                 </div>
             </div>
-            
+
             <!-- 产品图片轮播 -->
             <div class="relative mb-4">
                 <div class="h-80 bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="w-full h-full object-contain">
+                    <img src="../pic/1.png" class="w-full h-full object-contain">
                 </div>
                 <div class="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
                     1/5
                 </div>
             </div>
-            
+
             <!-- 产品信息 -->
             <div class="px-5 mb-4">
                 <div class="text-xl font-bold mb-2">富士 instax mini 9 拍立得相机</div>
@@ -57,7 +59,7 @@
                     <div class="mr-4">累计租出: 2,156次</div>
                     <div>好评率: 98%</div>
                 </div>
-                
+
                 <!-- 租赁选项 -->
                 <div class="px-5 py-4 bg-gray-50 mb-4">
                     <div class="flex justify-between items-center mb-4">
@@ -83,59 +85,139 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- 产品详情选项卡 -->
                 <div class="px-5 mb-4">
-                    <div class="flex border-b">
+                    <div class="flex border-b" data-tabs="detail-panels">
                         <div class="px-4 py-3 text-sm font-medium tab-active">产品详情</div>
                         <div class="px-4 py-3 text-sm font-medium text-gray-500">租赁须知</div>
                         <div class="px-4 py-3 text-sm font-medium text-gray-500">用户评价</div>
                     </div>
-                    
-                    <div class="py-4">
-                        <div class="mb-4">
-                            <div class="text-base font-medium mb-2">产品参数</div>
-                            <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">品牌:</span>
-                                    <span class="text-gray-800">富士(FUJIFILM)</span>
+
+                    <div id="detail-panels">
+                        <!-- 产品详情面板 -->
+                        <div class="tab-panel py-4">
+                            <div class="mb-4">
+                                <div class="text-base font-medium mb-2">产品参数</div>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">品牌:</span>
+                                        <span class="text-gray-800">富士(FUJIFILM)</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">型号:</span>
+                                        <span class="text-gray-800">instax mini 9</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">颜色:</span>
+                                        <span class="text-gray-800">冰晶白</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">相纸尺寸:</span>
+                                        <span class="text-gray-800">54×86mm</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">电池:</span>
+                                        <span class="text-gray-800">2节AA电池</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-500 w-20">重量:</span>
+                                        <span class="text-gray-800">约307g</span>
+                                    </div>
                                 </div>
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">型号:</span>
-                                    <span class="text-gray-800">instax mini 9</span>
+                            </div>
+                            <div>
+                                <div class="text-base font-medium mb-2">产品介绍</div>
+                                <div class="text-sm text-gray-600 leading-relaxed">
+                                    富士instax mini
+                                    9是一款简单易用的拍立得相机，拥有自拍镜和近摄镜附件，适合自拍和近距离拍摄。内置高性能闪光灯，即使在室内或昏暗环境下也能获得清晰照片。提供多种明亮颜色选择，轻巧便携，是记录生活点滴的理想选择。
                                 </div>
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">颜色:</span>
-                                    <span class="text-gray-800">冰晶白</span>
-                                </div>
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">相纸尺寸:</span>
-                                    <span class="text-gray-800">54×86mm</span>
-                                </div>
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">电池:</span>
-                                    <span class="text-gray-800">2节AA电池</span>
-                                </div>
-                                <div class="flex">
-                                    <span class="text-gray-500 w-20">重量:</span>
-                                    <span class="text-gray-800">约307g</span>
+                                <div class="mt-3">
+                                    <img src="../pic/1.png" class="w-full rounded-lg">
                                 </div>
                             </div>
                         </div>
-                        
-                        <div>
-                            <div class="text-base font-medium mb-2">产品介绍</div>
-                            <div class="text-sm text-gray-600 leading-relaxed">
-                                富士instax mini 9是一款简单易用的拍立得相机，拥有自拍镜和近摄镜附件，适合自拍和近距离拍摄。内置高性能闪光灯，即使在室内或昏暗环境下也能获得清晰照片。提供多种明亮颜色选择，轻巧便携，是记录生活点滴的理想选择。
+
+                        <!-- 租赁须知面板 -->
+                        <div class="tab-panel py-4" style="display: none;">
+                            <div class="mb-4">
+                                <div class="text-base font-medium mb-2">租赁流程</div>
+                                <div class="text-sm text-gray-600 leading-relaxed space-y-2">
+                                    <p>1. 选择您心仪的相机型号和租赁时长</p>
+                                    <p>2. 提交订单并支付租金及押金</p>
+                                    <p>3. 快递配送到付，开箱验收</p>
+                                    <p>4. 租赁到期后原路退回，押金自动退还</p>
+                                </div>
                             </div>
-                            <div class="mt-3">
-                                <img src="https://images.unsplash.com/photo-1576574535966-261f8a62e2d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="w-full rounded-lg">
+                            <div class="mb-4">
+                                <div class="text-base font-medium mb-2">注意事项</div>
+                                <div class="text-sm text-gray-600 leading-relaxed space-y-2">
+                                    <p>• 请保持设备清洁，避免磕撞和进水</p>
+                                    <p>• 相机电池、相纸需自行购买或加购</p>
+                                    <p>• 退还时请确保配件齐全</p>
+                                    <p>• 超时未还将按日租金的1.5倍收取超时费</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-base font-medium mb-2">押金说明</div>
+                                <div class="text-sm text-gray-600 leading-relaxed">
+                                    押金为¥299，设备完好退还后3个工作日内自动退还至原支付账户。
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 用户评价面板 -->
+                        <div class="tab-panel py-4" style="display: none;">
+                            <div class="flex items-center mb-4">
+                                <div class="text-2xl font-bold mr-2">4.8</div>
+                                <div>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="text-xs text-gray-500">328条评价</div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="border-b border-gray-100 pb-3">
+                                    <div class="flex items-center mb-2">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-2">
+                                            <i class="fas fa-user text-pink-400 text-xs"></i>
+                                        </div>
+                                        <div class="text-sm font-medium">小林</div>
+                                        <div class="ml-auto flex text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm text-gray-600">拍出来的照片质感很棒，操作简单，非常适合新手！很喜欢这个租赁服务。</div>
+                                    <div class="text-xs text-gray-400 mt-1">2024-04-08</div>
+                                </div>
+                                <div class="border-b border-gray-100 pb-3">
+                                    <div class="flex items-center mb-2">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-2">
+                                            <i class="fas fa-user text-blue-400 text-xs"></i>
+                                        </div>
+                                        <div class="text-sm font-medium">摄影爱好者</div>
+                                        <div class="ml-auto flex text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-sm text-gray-600">相机状态很新，物流也很快。就是相纸需要另外购买，建议平台可以捆绑销售。</div>
+                                    <div class="text-xs text-gray-400 mt-1">2024-04-05</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- 底部操作栏 -->
             <div class="border-t border-gray-200 bg-white py-3 px-5 flex items-center">
                 <div class="flex items-center mr-3">
@@ -146,13 +228,15 @@
                     <i class="far fa-comment-dots text-xl text-gray-500"></i>
                     <div class="text-xs text-gray-500 mt-1">客服</div>
                 </div>
-                <button class="flex-1 primary-btn py-3 rounded-full font-medium" onclick="window.location.href='orders.html'">
+                <button class="flex-1 primary-btn py-3 rounded-full font-medium"
+                    onclick="window.location.href='orders.html'">
                     立即租赁
                 </button>
             </div>
-        </div>
+        </main>
     </div>
-    
+
     <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

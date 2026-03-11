@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>一拍即租 - 拍立得相机租赁平台</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+</head>
+
+<body>
+    <div id="app">
+        <div id="app-content">
+            <!-- 页面内容由 JS 动态渲染 -->
+        </div>
+
+        <!-- 底部导航栏 -->
+        <nav id="bottom-nav">
+            <div class="nav-item active" data-page="home" onclick="location.hash='#home'">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </div>
+            <div class="nav-item" data-page="categories" onclick="location.hash='#categories/all'">
+                <span class="nav-icon">📋</span>
+                <span>分类</span>
+            </div>
+            <div class="nav-item" data-page="orders" onclick="location.hash='#orders'">
+                <span class="nav-icon">📦</span>
+                <span>订单</span>
+            </div>
+            <div class="nav-item" data-page="profile" onclick="location.hash='#profile'">
+                <span class="nav-icon">👤</span>
+                <span>我的</span>
+                <span id="nav-notification-badge"></span>
+            </div>
+        </nav>
+
+        <!-- 商户底部导航栏 -->
+        <nav id="merchant-nav" style="display:none">
+            <div class="nav-item active" data-page="m_products" onclick="location.hash='#m_products'">
+                <span class="nav-icon">📦</span>
+                <span>商品</span>
+            </div>
+            <div class="nav-item" data-page="m_orders" onclick="location.hash='#m_orders'">
+                <span class="nav-icon">📋</span>
+                <span>订单</span>
+            </div>
+            <div class="nav-item" data-page="m_stats" onclick="location.hash='#m_stats'">
+                <span class="nav-icon">📊</span>
+                <span>数据</span>
+            </div>
+            <div class="nav-item" data-page="m_marketing" onclick="location.hash='#m_marketing'">
+                <span class="nav-icon">🎯</span>
+                <span>营销</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
